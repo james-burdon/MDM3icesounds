@@ -173,6 +173,11 @@ def convert_nc_to_csv(nc_path, out_dir):
                     for i in range(ny):
                         row_vals = arr2[i, :]
                         for j in range(nx):
+                            val = row_vals[j]
+                            if np.isnan(val):
+                                continue
+                            if val==0:
+                                continue
                             w.writerow([t_label, lat_vals[i], lon_vals[j], row_vals[j]])
 
                 # Case B: 2D lat/lon grids
