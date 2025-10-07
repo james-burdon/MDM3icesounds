@@ -7,7 +7,6 @@ from netCDF4 import Dataset, num2date
 ROOT = r"C:\Users\mayue\Desktop\2020_oct_to_december_sea_ice[1]"
 OUT_ROOT = os.path.join(ROOT, "csv_out")
 
-# ----------------- Helpers -----------------
 def find_coord_var(ds, candidates):
     names = {name.lower(): name for name in ds.variables.keys()}
     for cand in candidates:
@@ -220,3 +219,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
